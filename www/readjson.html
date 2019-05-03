@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/ionic.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var url = "https://cinates.000webhostapp.com/www/json.php";
+        $.getJSON(url, function(result) {
+            console.log(result);
+            $.each(result, function(i, field) {
+                var id = field.id;
+                var id = field.id;
+                var nama = field.nama;
+                var jenis = field.jenis;
+                var harga = field.harga;
+                var alamat = field.alamat;
+                $("#listview").append("<a class='item' href='form.html?id=" + id + "&id=" + id + "&nama=" + nama + "&jenis=" + jenis + "&harga=" + harga + "&alamat=" + alamat + "'>   <h2>" + id + " </h2><h2>" + nama + " </h2><h2>" + jenis + "</h2><h2>" + harga + "</h2><h2>" + alamat + "</h2></a>");
+            });
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
+        <a href="index.html" class="button button-clear">Home</a>
+        <h1 class="title">Lihat Data Barang</h1>
+    </div>
+    <br/>
+    <br/>
+    <ul class="list" id="listview">
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/ionic.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/geturi.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var id = decodeURI(getUrlVars()["id"]);
+        var id = decodeURI(getUrlVars()["id"]);
+        var nama = decodeURI(getUrlVars()["nama"]);
+        var jenis = decodeURI(getUrlVars()["jenis"]);
+        var harga = decodeURI(getUrlVars()["harga"]);
+        var alamat = decodeURI(getUrlVars()["alamat"]);
+        $("#id").val(id);
+        $("#id").val(id);
+        $("#nama").val(nama);
+        $("#jenis").val(jenis);
+        $("#harga").val(harga);
+        $("#alamat").val(alamat);
+        $("#update").click(function() {
+            var id = $("#id").val();
+            var id = $("#id").val();
+            var nama = $("#nama").val();
+            var jenis = $("#jenis").val();
+            var harga = $("#harga").val();
+            var alamat = $("#alamat").val();
+            var dataString = "id=" + id + "&id=" + id + "&nama=" + nama + "&jenis=" + jenis + "&harga=" + harga + "&alamat=" + alamat +"&update=";
+            $.ajax({
+                type: "POST",
+                url: "https://cinates.000webhostapp.com/www/update.php",
+                data: dataString,
+                crossDomain: true,
+                cache: false,
+                beforeSend: function() {
+                    $("#update").val('Loading dulu guys...');
+                },
+                success: function(data) {
+                    if (data == "success") {
+                        alert("data sudah ter-update nih guys");
+                        $("#update").val("Update");
+                    } else if (data == "error") {
+                        alert("hmmm masih error gimana ini guys....");
+                    }
+                }
+            });
+
+        });
+        $("#delete").click(function() {
+            var id = $("#id").val();
+            var dataString = "id=" + id + "&delete=";
+            $.ajax({
+                type: "GET",
+                url: "https://cinates.000webhostapp.com/www/delete.php",
+                data: dataString,
+                crossDomain: true,
+                cache: false,
+                beforeSend: function() {
+                    $("#delete").val('proses dulu guys...');
+                },
+                success: function(data) {
+                    if (data == "success") {
+                        alert("Deleted");
+                        $("#delete").val("Delete");
+                    } else if (data == "error") {
+                        alert("error");
+                    }
+                }
+            });
+
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
+        <a href="index.html" class="button button-clear">Home</a>
+        <h1 class="title">Perbarui Data Barang</h1>
+        <a class="button button-clear" href="readjson.html">Lihat Data Barang</a>
+    </div>
+    <br/>
+    <br/>
+    <div class="list">
+        <input type="hidden" id="id" value="" />
+         <div class="item">
+            <label>id</label>
+            <input type="text" id="id" value="" />
+        </div>
+        <div class="item">
+            <label>nama</label>
+            <input type="text" id="nama" value="" />
+        </div>
+        <div class="item">
+            <label>jenis</label>
+            <input type="text" id="jenis" value="" />
+        </div>
+        <div class="item">
+            <label>harga</label>
+            <input type="text" id="harga" value="" />
+        </div>
+        <div class="item">
+            <label>alamat</label>
+            <input type="text" id="alamat" value="" />
+        </div>
+        <div class="item">
+            <input type="button" id="update" class="button button-block" value="Update" />
+            <input type="button" id="delete" class="button button-block" value="Delete" />
+        </div>
+    </div>
+</body>
+
+</html>
