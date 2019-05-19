@@ -3,7 +3,6 @@
  if(isset($_POST['update']))
  {
  $id=$_POST['id'];
- $id=$_POST['id'];
  $nim=$_POST['nama'];
  $nama=$_POST['jenis'];
  $jurusan=$_POST['harga'];
