@@ -5,17 +5,17 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        var url = "https://cinates.000webhostapp.com/www/json.php";
+        var url = "https://frankaditya08.000webhostapp.com/aa/aa/www/json.php";
         $.getJSON(url, function(result) {
             console.log(result);
             $.each(result, function(i, field) {
-                var id = field.id;
+                
                 var id = field.id;
                 var nama = field.nama;
                 var jenis = field.jenis;
                 var harga = field.harga;
                 var alamat = field.alamat;
-                $("#listview").append("<a class='item' href='form.html?id=" + id + "&id=" + id + "&nama=" + nama + "&jenis=" + jenis + "&harga=" + harga + "&alamat=" + alamat + "'>   <h2>" + id + " </h2><h2>" + nama + " </h2><h2>" + jenis + "</h2><h2>" + harga + "</h2><h2>" + alamat + "</h2></a>");
+                $("#listview").append("<a class='item' href='form.html?id=" + id + "&nama=" + nama + "&jenis=" + jenis + "&harga=" + harga + "&alamat=" + alamat + "'>   <h2>" + id + " </h2><h2>" + nama + " </h2><h2>" + jenis + "</h2><h2>" + harga + "</h2><h2>" + alamat + "</h2></a>");
             });
         });
     });
