@@ -7,28 +7,26 @@
     <script type="text/javascript">
     $(document).ready(function() {
         var id = decodeURI(getUrlVars()["id"]);
-        var id = decodeURI(getUrlVars()["id"]);
         var nama = decodeURI(getUrlVars()["nama"]);
         var jenis = decodeURI(getUrlVars()["jenis"]);
         var harga = decodeURI(getUrlVars()["harga"]);
         var alamat = decodeURI(getUrlVars()["alamat"]);
-        $("#id").val(id);
         $("#id").val(id);
         $("#nama").val(nama);
         $("#jenis").val(jenis);
         $("#harga").val(harga);
         $("#alamat").val(alamat);
         $("#update").click(function() {
-            var id = $("#id").val();
+            
             var id = $("#id").val();
             var nama = $("#nama").val();
             var jenis = $("#jenis").val();
             var harga = $("#harga").val();
             var alamat = $("#alamat").val();
-            var dataString = "id=" + id + "&id=" + id + "&nama=" + nama + "&jenis=" + jenis + "&harga=" + harga + "&alamat=" + alamat +"&update=";
+            var dataString = "id=" + id + "&nama=" + nama + "&jenis=" + jenis + "&harga=" + harga + "&alamat=" + alamat +"&update=";
             $.ajax({
                 type: "POST",
-                url: "https://cinates.000webhostapp.com/www/update.php",
+                url: "https://frankaditya08.000webhostapp.com/aa/aa/www/update.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -51,7 +49,7 @@
             var dataString = "id=" + id + "&delete=";
             $.ajax({
                 type: "GET",
-                url: "https://cinates.000webhostapp.com/www/delete.php",
+                url: "https://frankaditya08.000webhostapp.com/aa/aa/www/delete.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -82,7 +80,6 @@
     <br/>
     <br/>
     <div class="list">
-        <input type="hidden" id="id" value="" />
          <div class="item">
             <label>id</label>
             <input type="text" id="id" value="" />
